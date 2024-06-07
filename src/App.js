@@ -21,7 +21,7 @@ function App() {
 
 
   const handleDelete = (taskName) => {
-    const updatedList = list.filter((item) => item.task != taskName)
+    const updatedList = list.filter((item) => item.task !== taskName)
     setList(updatedList)
     settaskName('')
     localStorage.setItem('todoList', JSON.stringify(updatedList));
@@ -48,7 +48,7 @@ function App() {
             localStorage.removeItem("todoList");
             setList([])
           }
-          } >    <img src="refresh.svg" /></div></div>
+          } >    <img src="refresh.svg" alt="" /></div></div>
         <div class="custom-search">
           <input
             type="text"
@@ -64,13 +64,13 @@ function App() {
               settaskName('')
             }
           }}>
-            <img src="plus.svg" />
+            <img src="plus.svg" alt=""/>
           </button>
 
         </div>
         {list.length > 0 && list?.map((item) => {
           return <div className='list-container'><p key={item} onClick={() => handleTextClick(item.task)} className="custom-list" style={{ textDecoration: item.isStruck ? 'line-through' : 'none' }}
-          >{`${item.task}`}</p><div className='delete-icon' onClick={() => handleDelete(item.task)}><img src="delete.svg" /></div> </div>
+          >{`${item.task}`}</p><div className='delete-icon' onClick={() => handleDelete(item.task)}><img src="delete.svg" alt=""/></div> </div>
         })}
       </div>
     </div>
