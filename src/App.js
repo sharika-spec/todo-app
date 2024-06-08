@@ -44,11 +44,12 @@ function App() {
     <div className='container'>
       <div className='todo-container' >
         <div className='title-box'> <h3 className='title'>Todo App</h3>
-          <div className='refresh' onClick={() => {
+          <div className='clear-all' onClick={() => {
             localStorage.removeItem("todoList");
             setList([])
+
           }
-          } >    <img src="refresh.svg" alt="" /></div></div>
+          } > Clear All</div></div>
         <div class="custom-search">
           <input
             type="text"
@@ -64,13 +65,13 @@ function App() {
               settaskName('')
             }
           }}>
-            <img src="plus.svg" alt=""/>
+            <img src="plus.svg" alt="" />
           </button>
 
         </div>
         {list.length > 0 && list?.map((item) => {
           return <div className='list-container'><p key={item} onClick={() => handleTextClick(item.task)} className="custom-list" style={{ textDecoration: item.isStruck ? 'line-through' : 'none' }}
-          >{`${item.task}`}</p><div className='delete-icon' onClick={() => handleDelete(item.task)}><img src="delete.svg" alt=""/></div> </div>
+          >{`${item.task}`}</p><div className='delete-icon' onClick={() => handleDelete(item.task)}><img src="delete.svg" alt="" /></div> </div>
         })}
       </div>
     </div>

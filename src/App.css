@@ -52,6 +52,7 @@ input[type="text"] {
 
 .delete-icon {
   position: absolute;
+  cursor: pointer;
   top: 0.625rem;
   right: 0.625rem
 }
@@ -67,6 +68,7 @@ input[type="text"] {
 .container {
   display: flex;
   justify-content: center;
+  height: 100svh;
   height: 100vh;
   background-color: #FCF4A3;
   align-items: center
@@ -76,8 +78,9 @@ input[type="text"] {
   display: flex;
   justify-content: space-between;
 }
-.refresh{
-  cursor: pointer
+.clear-all{
+  cursor: pointer;
+  font-size:  0.725rem;
 }
 .title{
   width: '90%'
